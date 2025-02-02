@@ -1,0 +1,25 @@
+.items {
+	padding: 0 20px;
+}
+
+.items__label {
+	display: flex;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #000;
+}
+
+.items__input {
+	margin: 0;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+.items__span {
+	font-size: 20px;
+	line-height: 18px;
+}
+
+.active {
+	text-decoration: line-through;
+}

@@ -1,0 +1,14 @@
+.form {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.form__input {
+	width: 75%;
+	height: 25px;
+	background: inherit;
+	border: 2px solid #000;
+	border-radius: 5px;
+	padding: 0 10px;
+}
