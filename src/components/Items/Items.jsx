@@ -1,15 +1,14 @@
 import './Items.css';
 
-function Items() {
+// eslint-disable-next-line react/prop-types
+function Items({ task }) {
 	return (
-		<>
-			<div className='items'>
-				<label className='items__label'>
-					<input type='checkbox' value='value-1' className='items__input' />
-					<span className='items__span'>sometime text</span>
-				</label>
-			</div>
-		</>
+		<div className='items'>
+			<label className='items__label'>
+				<input type='checkbox' className='items__input' />
+				<span className='items__span'>{task}</span>
+			</label>
+		</div>
 	);
 }
 
