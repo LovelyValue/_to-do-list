@@ -2,13 +2,19 @@
 import Items from '../Items/Items';
 import './List.css';
 
-// eslint-disable-next-line react/prop-types
-function List({ tasks }) {
+function List({ tasks, deleteTask }) {
 	return (
 		<div className='list'>
 			<h3 className='list__title'>Tasks</h3>
-			{tasks.map((task, index) => (
-				<Items key={index} task={task} index={index} />
+			{tasks.map((task, index, completed) => (
+				<Items
+					key={index}
+					task={task}
+					index={index}
+					deleteTask={deleteTask}
+					// completedTask={completedTask}
+					completed={completed}
+				/>
 			))}
 		</div>
 	);

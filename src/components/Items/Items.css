@@ -19,6 +19,7 @@
 .items__span {
 	font-size: 20px;
 	line-height: 18px;
+	flex-grow: 1;
 }
 
 .active {

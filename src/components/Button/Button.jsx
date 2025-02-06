@@ -1,10 +1,12 @@
 import './Button.css';
 
 // eslint-disable-next-line react/prop-types
-function Button({ children }) {
+function Button({ children, type }) {
 	return (
 		<>
-			<button className='button'>{children}</button>
+			<button type={type} className='button'>
+				{children}
+			</button>
 		</>
 	);
 }
