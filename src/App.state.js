@@ -1,3 +1,5 @@
+import { localStorageGet, localStorageSet } from './LocalStorage';
+
 export const STATE = [];
 
 export function reducer(state, action) {
@@ -8,7 +10,13 @@ export function reducer(state, action) {
 				text: action.payload,
 				completed: false,
 			};
-			return [...state, newTask];
+			const data = [...state, newTask];
+			localStorageSet(data);
+
+			return data;
+		}
+		case 'GET': {
+			return localStorageGet();
 		}
 	}
 }
