@@ -1,26 +1,23 @@
-import { useReducer } from 'react';
+import { useState } from 'react';
 import Button from '../Button/Button';
 import './Form.css';
-import { INITIAL_STATE, reducer } from './Form.state';
 
 // eslint-disable-next-line react/prop-types
 function Form({ addTask }) {
-	const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
-	const { values } = state;
+	const [state, setState] = useState('');
 
-	//Функция отправки формы
+	//Функция отправки form
 	const submitForm = e => {
 		e.preventDefault();
-		const newTask = values.trim();
-		if (!newTask) return; //Не добавляет пустую строку
-		dispatch({ type: 'SUBMIT', payload: newTask });
-		addTask(values);
-
-		dispatch({ type: 'RESET' }); //Очистка состояния формы
+		const text = state.trim();
+		if (!text) return;
+		addTask(text);
+		setState('');
 	};
 
+	//Функция отслеживания изменения input
 	const changeInput = e => {
-		dispatch({ type: 'CHANGE', payload: e.target.value }); //Получение состояния input
+		setState(e.target.value);
 	};
 
 	return (
@@ -28,10 +25,10 @@ function Form({ addTask }) {
 			<input
 				type='text'
 				name='task'
-				value={values}
 				placeholder='Enter the task'
 				className='form__input'
 				onChange={changeInput}
+				value={state}
 			/>
 			<Button type='submit'>Send</Button>
 		</form>
