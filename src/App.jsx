@@ -16,8 +16,13 @@ function App() {
 	}, []);
 
 	//Функция добавления задачи
-	const addTask = task => {
-		dispatch({ type: 'SUBMIT', payload: task });
+	const addTask = text => {
+		dispatch({ type: 'SUBMIT', payload: text });
+	};
+
+	//Функция изменения checkbox
+	const checked = (id, completed) => {
+		dispatch({ type: 'CHECKED', payload: { id, completed } });
 	};
 
 	return (
@@ -25,7 +30,7 @@ function App() {
 			<Header />
 			<Main>
 				<Form addTask={addTask} />
-				<List />
+				<List data={state} checked={checked} />
 			</Main>
 			<Footer />
 		</div>

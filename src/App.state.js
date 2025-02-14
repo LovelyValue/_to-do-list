@@ -18,5 +18,14 @@ export function reducer(state, action) {
 		case 'GET': {
 			return localStorageGet();
 		}
+		case 'CHECKED': {
+			const { id, completed } = action.payload;
+			const data = state.map(task =>
+				task.id === id ? { ...task, completed: completed } : task
+			);
+			localStorageSet(data);
+
+			return data;
+		}
 	}
 }
