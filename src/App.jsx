@@ -25,12 +25,17 @@ function App() {
 		dispatch({ type: 'CHECKED', payload: { id, completed } });
 	};
 
+	//Функция удаления задачи
+	const deleteTask = id => {
+		dispatch({ type: 'DELETE', payload: id });
+	};
+
 	return (
 		<div className='app'>
 			<Header />
 			<Main>
 				<Form addTask={addTask} />
-				<List data={state} checked={checked} />
+				<List data={state} checked={checked} deleteTask={deleteTask} />
 			</Main>
 			<Footer />
 		</div>

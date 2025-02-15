@@ -27,5 +27,15 @@ export function reducer(state, action) {
 
 			return data;
 		}
+		case 'DELETE': {
+			const data = state.filter(task => task.id !== action.payload);
+			const updateData = data.map((task, index) => ({
+				...task,
+				id: index + 1,
+			}));
+			localStorageSet(updateData);
+
+			return updateData;
+		}
 	}
 }

@@ -2,7 +2,7 @@
 import Items from '../Items/Items';
 import './List.css';
 
-function List({ data, checked }) {
+function List({ data, checked, deleteTask }) {
 	return (
 		<div className='list'>
 			<h3 className='list__title'>Tasks</h3>
@@ -13,6 +13,7 @@ function List({ data, checked }) {
 					id={task.id}
 					completed={task.completed}
 					checked={checked}
+					deleteTask={deleteTask}
 				/>
 			))}
 		</div>
