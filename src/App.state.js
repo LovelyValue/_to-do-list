@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import { localStorageGet, localStorageSet } from './LocalStorage';
 
 export const STATE = [];
@@ -6,7 +7,7 @@ export function reducer(state, action) {
 	switch (action.type) {
 		case 'SUBMIT': {
 			const newTask = {
-				id: state.length + 1,
+				id: nanoid(),
 				text: action.payload,
 				completed: false,
 			};
@@ -29,13 +30,9 @@ export function reducer(state, action) {
 		}
 		case 'DELETE': {
 			const data = state.filter(task => task.id !== action.payload);
-			const updateData = data.map((task, index) => ({
-				...task,
-				id: index + 1,
-			}));
-			localStorageSet(updateData);
+			localStorageSet(data);
 
-			return updateData;
+			return data;
 		}
 	}
 }
