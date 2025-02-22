@@ -1,16 +1,23 @@
+/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import './Footer.css';
+import styles from './Footer.module.css';
 
-function Footer() {
+// eslint-disable-next-line react/prop-types
+function Footer({ data, deleteTaskCompleted }) {
+	const clear = () => {
+		const updatedTasks = data.filter(task => !task.completed);
+		deleteTaskCompleted(updatedTasks);
+	};
+
 	return (
-		<footer className='footer'>
-			<p>2 items left</p>
+		<footer className={styles['footer']}>
+			<p>{data.filter(task => !task.completed).length} items left</p>
 
 			<Link to='/'>All</Link>
 			<Link to='/active'>Active</Link>
 			<Link to='/completed'>Completed</Link>
-			<Button>Clear completed</Button>
+			<Button onClick={clear}>Clear completed</Button>
 		</footer>
 	);
 }
