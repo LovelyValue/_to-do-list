@@ -1,21 +1,12 @@
 /* eslint-disable react/prop-types */
-import Items from '../Items/Items';
+import { Outlet } from 'react-router-dom';
 import './List.css';
 
 function List({ data, checked, deleteTask }) {
 	return (
 		<div className='list'>
 			<h3 className='list__title'>Tasks</h3>
-			{data.map(task => (
-				<Items
-					key={task.id}
-					text={task.text}
-					id={task.id}
-					completed={task.completed}
-					checked={checked}
-					deleteTask={deleteTask}
-				/>
-			))}
+			<Outlet context={[data, checked, deleteTask]} />
 		</div>
 	);
 }

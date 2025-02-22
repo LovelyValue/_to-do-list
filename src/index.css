@@ -1,4 +1,18 @@
 :root {
 	padding: 50px;
 	background-color: #fdfdfd;
+	width: 500px;
+	height: 700px;
+	margin: 0 auto;
+	padding: 35px 25px;
+	background: linear-gradient(
+		180deg,
+		rgb(198, 174, 198) 15%,
+		rgb(219, 189, 197) 58%,
+		rgb(209, 205, 212) 100%
+	);
+	border: 3px solid rgb(95, 0, 0);
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
 }
