@@ -1,10 +1,8 @@
-import './Header.css';
+import styles from './Header.module.css';
 
 function Header() {
 	return (
-		<>
-			<img className='header__logo' src='public\logo.svg' alt='Logo' />
-		</>
+		<img className={styles['header__logo']} src='public\logo.svg' alt='Logo' />
 	);
 }
 

@@ -1,0 +1,17 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+	width: 600px;
+	height: 900px;
+	padding: 30px;
+	/* margin: 0 auto; */
+	border: 3px solid rgb(0, 0, 0);
+	border-radius: 10px;
+	background: linear-gradient(
+		180deg,
+		rgb(198, 174, 198) 15%,
+		rgb(219, 189, 197) 58%,
+		rgb(209, 205, 212) 100%
+	);
+	gap: 50px 0;
+}

@@ -1,27 +1,29 @@
-.items {
-	padding: 0 20px;
-}
-
-.items__label {
+.item__label {
 	display: flex;
 	padding-bottom: 5px;
 	border-bottom: 1px solid #000;
-	margin-bottom: 15px;
 }
 
-.items__input {
+.item__input {
 	margin: 0;
 	width: 20px;
 	height: 20px;
 	margin-right: 10px;
 }
 
-.items__span {
+.item__span {
 	font-size: 20px;
-	line-height: 18px;
+	line-height: 20px;
 	flex-grow: 1;
 }
 
 .active {
 	text-decoration: line-through;
+}
+.item__button {
+}
+
+.item__img {
+	width: 25px;
+	height: 25px;
 }

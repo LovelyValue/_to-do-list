@@ -1,5 +1,5 @@
 import { useOutletContext } from 'react-router-dom';
-import Items from '../../components/Items/Items';
+import Item from '../../components/Item/Item';
 
 function Completed() {
 	const [data, checked, deleteTask] = useOutletContext();
@@ -11,7 +11,7 @@ function Completed() {
 	return (
 		<>
 			{data.filter(filter).map(task => (
-				<Items
+				<Item
 					key={task.id}
 					text={task.text}
 					id={task.id}

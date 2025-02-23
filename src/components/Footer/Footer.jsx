@@ -14,10 +14,18 @@ function Footer({ data, deleteTaskCompleted }) {
 		<footer className={styles['footer']}>
 			<p>{data.filter(task => !task.completed).length} items left</p>
 
-			<Link to='/'>All</Link>
-			<Link to='/active'>Active</Link>
-			<Link to='/completed'>Completed</Link>
-			<Button onClick={clear}>Clear completed</Button>
+			<Link className={styles['footer__link']} to='/'>
+				All
+			</Link>
+			<Link className={styles['footer__link']} to='/active'>
+				Active
+			</Link>
+			<Link className={styles['footer__link']} to='/completed'>
+				Completed
+			</Link>
+			<Button type='button' onClick={clear} className={styles['padding']}>
+				Clear completed
+			</Button>
 		</footer>
 	);
 }

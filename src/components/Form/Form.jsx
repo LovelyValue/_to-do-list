@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Button from '../Button/Button';
-import './Form.css';
+import styles from './Form.module.css';
 
 // eslint-disable-next-line react/prop-types
 function Form({ addTask }) {
@@ -21,16 +21,18 @@ function Form({ addTask }) {
 	};
 
 	return (
-		<form className='form' onSubmit={submitForm}>
+		<form className={styles['form']} onSubmit={submitForm}>
 			<input
 				type='text'
 				name='task'
 				placeholder='Enter the task'
-				className='form__input'
+				className={styles['form__input']}
 				onChange={changeInput}
 				value={state}
 			/>
-			<Button type='submit'>Send</Button>
+			<Button type='submit' className={styles['width']}>
+				Send
+			</Button>
 		</form>
 	);
 }

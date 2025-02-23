@@ -3,6 +3,7 @@ import { STATE, reducer } from '../../App.state';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Main from '../../components/Main/Main';
+import styles from './Layout.module.css';
 
 function Layout() {
 	const [state, dispatch] = useReducer(reducer, STATE);
@@ -31,7 +32,7 @@ function Layout() {
 		dispatch({ type: 'DELETE_COMPLETED', payload: updatedTasks });
 	};
 	return (
-		<>
+		<div className={styles['layout']}>
 			<Header />
 			<Main
 				addTask={addTask}
@@ -40,7 +41,7 @@ function Layout() {
 				deleteTask={deleteTask}
 			/>
 			<Footer data={state} deleteTaskCompleted={deleteTaskCompleted} />
-		</>
+		</div>
 	);
 }
 
