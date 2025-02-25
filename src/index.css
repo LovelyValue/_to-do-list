@@ -1,14 +1,43 @@
+@font-face {
+	font-family: 'Wolgadeutsche';
+	src: url('/public/fonts/Wolgadeutsche.ttf');
+	font-weight: 400;
+}
+
 :root {
+	background: #000;
+	padding: 35px;
+	--background-color: #4f0202;
+	--text-color: #000;
+	--hover-color: #e10000;
+	--active-color: #930000;
+	--border-color: #000000;
+	--scroll-color: #000000;
 }
+
 * {
+	font-family: Wolgadeutsche;
+	font-size: 17px;
 	box-sizing: border-box;
+	color: var(--text-color);
 }
+
 *:focus {
 	outline: none;
 }
+
 button {
 	padding: 0;
-	background-color: inherit;
 	border: none;
 	cursor: pointer;
+	background-color: inherit;
+}
+::-webkit-scrollbar {
+	width: 7px; /*ширина scrollbar*/
+	background-color: inherit; /*цвет дорожки*/
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--scroll-color); /*цвет плашки*/
+	border-radius: 20px;
 }

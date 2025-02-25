@@ -6,13 +6,13 @@
 .form__input {
 	width: 400px;
 	padding: 10px 15px;
-	border: 2px solid #000;
+	border: 2px solid var(--border-color);
 	border-radius: 5px;
 	background: inherit;
 }
 
 .form__input:focus {
-	background-color: #1971b5;
+	background-color: var(--active-color);
 }
 .width {
 	width: 100px;

@@ -1,8 +1,8 @@
 .button {
-	border: 2px solid #000000;
+	border: 2px solid var(--border-color);
 	border-radius: 5px;
 }
 
 .button:hover {
-	background-color: rgb(244, 100, 230);
+	background-color: var(--hover-color);
 }

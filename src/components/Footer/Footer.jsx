@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom';
+import cn from 'classnames';
+import { NavLink } from 'react-router-dom';
 import Button from '../Button/Button';
 import styles from './Footer.module.css';
 
@@ -10,19 +11,42 @@ function Footer({ data, deleteTaskCompleted }) {
 		deleteTaskCompleted(updatedTasks);
 	};
 
+	const itemsLeft = data.filter(task => !task.completed).length;
+
 	return (
 		<footer className={styles['footer']}>
-			<p>{data.filter(task => !task.completed).length} items left</p>
+			<p className={styles['footer__counter']}>{itemsLeft} items left</p>
 
-			<Link className={styles['footer__link']} to='/'>
+			<NavLink
+				className={({ isActive }) =>
+					cn(styles['footer__link'], {
+						[styles.active]: isActive,
+					})
+				}
+				to='/'
+			>
 				All
-			</Link>
-			<Link className={styles['footer__link']} to='/active'>
+			</NavLink>
+			<NavLink
+				className={({ isActive }) =>
+					cn(styles['footer__link'], {
+						[styles.active]: isActive,
+					})
+				}
+				to='/active'
+			>
 				Active
-			</Link>
-			<Link className={styles['footer__link']} to='/completed'>
+			</NavLink>
+			<NavLink
+				className={({ isActive }) =>
+					cn(styles['footer__link'], {
+						[styles.active]: isActive,
+					})
+				}
+				to='/completed'
+			>
 				Completed
-			</Link>
+			</NavLink>
 			<Button type='button' onClick={clear} className={styles['padding']}>
 				Clear completed
 			</Button>
