@@ -9,8 +9,16 @@ function Form({ addTask }) {
 	//Функция отправки form
 	const submitForm = e => {
 		e.preventDefault();
-		const text = state.trim();
-		if (!text) return;
+		const trimmedText = state.trim();
+
+		if (!trimmedText) return;
+
+		const maxLength = 35;
+		const text =
+			trimmedText.length > maxLength
+				? trimmedText.slice(0, maxLength) + '...'
+				: trimmedText;
+
 		addTask(text);
 		setState('');
 	};

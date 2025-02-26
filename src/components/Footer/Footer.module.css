@@ -1,12 +1,14 @@
 .footer {
 	display: flex;
 	justify-content: space-between;
-	flex-grow: 0;
 	align-items: center;
 	padding: 0;
+	width: 100%;
 }
 
 .footer__counter {
+	min-width: 80px;
+	text-align: center;
 }
 
 .footer__link {
