@@ -1,14 +1,12 @@
-import Items from '../Items/Items';
+/* eslint-disable react/prop-types */
+import { Outlet } from 'react-router-dom';
 import './List.css';
 
-function List() {
+function List({ data, changeChecked, deleteTask }) {
 	return (
-		<>
-			<div className='list'>
-				<h3 className='list__title'>Tasks</h3>
-				<Items />
-			</div>
-		</>
+		<div className='list'>
+			<Outlet context={[data, changeChecked, deleteTask]} />
+		</div>
 	);
 }
 

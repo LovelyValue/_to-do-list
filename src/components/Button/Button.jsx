@@ -1,11 +1,17 @@
-import './Button.css';
+import cn from 'classnames';
+
+import styles from './Button.module.css';
 
 // eslint-disable-next-line react/prop-types
-function Button({ children }) {
+function Button({ children, type, onClick, className }) {
 	return (
-		<>
-			<button className='button'>{children}</button>
-		</>
+		<button
+			type={type}
+			onClick={onClick}
+			className={cn(styles['button'], className)}
+		>
+			{children}
+		</button>
 	);
 }
 
