@@ -34,5 +34,9 @@ export function reducer(state, action) {
 
 			return data;
 		}
+		case 'DELETE_COMPLETED': {
+			localStorageSet(action.payload);
+			return action.payload;
+		}
 	}
 }
