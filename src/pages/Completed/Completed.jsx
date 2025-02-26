@@ -3,8 +3,9 @@ import Item from '../../components/Item/Item';
 import styles from './Completed.module.css';
 
 function Completed() {
-	const [data, checked, deleteTask] = useOutletContext();
+	const [data, changeChecked, deleteTask] = useOutletContext();
 
+	//Фильтрация задач
 	function filter(task) {
 		return task.completed === true;
 	}
@@ -19,7 +20,7 @@ function Completed() {
 						text={task.text}
 						id={task.id}
 						completed={task.completed}
-						checked={checked}
+						changeChecked={changeChecked}
 						deleteTask={deleteTask}
 					/>
 				))}

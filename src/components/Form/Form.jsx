@@ -30,7 +30,7 @@ function Form({ addTask }) {
 				onChange={changeInput}
 				value={state}
 			/>
-			<Button type='submit' className={styles['width']}>
+			<Button type='submit' className={styles['form__button']}>
 				Send
 			</Button>
 		</form>

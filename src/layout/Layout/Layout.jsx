@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from 'react';
-import { STATE, reducer } from '../../App.state';
+import { STATE, reducer } from '../../Layout.state';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Main from '../../components/Main/Main';
@@ -19,7 +19,7 @@ function Layout() {
 	};
 
 	//Функция изменения checkbox
-	const checked = (id, completed) => {
+	const changeChecked = (id, completed) => {
 		dispatch({ type: 'CHECKED', payload: { id, completed } });
 	};
 
@@ -28,19 +28,21 @@ function Layout() {
 		dispatch({ type: 'DELETE', payload: id });
 	};
 
-	const deleteTaskCompleted = updatedTasks => {
+	//Функция удаления выполненных задачи
+	const deleteTasksCompleted = updatedTasks => {
 		dispatch({ type: 'DELETE_COMPLETED', payload: updatedTasks });
 	};
+
 	return (
 		<div className={styles['layout']}>
 			<Header />
 			<Main
 				addTask={addTask}
 				data={state}
-				checked={checked}
+				changeChecked={changeChecked}
 				deleteTask={deleteTask}
 			/>
-			<Footer data={state} deleteTaskCompleted={deleteTaskCompleted} />
+			<Footer data={state} deleteTasksCompleted={deleteTasksCompleted} />
 		</div>
 	);
 }

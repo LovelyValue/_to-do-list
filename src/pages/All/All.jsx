@@ -3,7 +3,7 @@ import Item from '../../components/Item/Item';
 import styles from './All.module.css';
 
 function All() {
-	const [data, checked, deleteTask] = useOutletContext();
+	const [data, changeChecked, deleteTask] = useOutletContext();
 
 	return (
 		<>
@@ -15,7 +15,7 @@ function All() {
 						text={task.text}
 						id={task.id}
 						completed={task.completed}
-						checked={checked}
+						changeChecked={changeChecked}
 						deleteTask={deleteTask}
 					/>
 				))}

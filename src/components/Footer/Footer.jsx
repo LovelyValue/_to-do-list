@@ -5,12 +5,14 @@ import Button from '../Button/Button';
 import styles from './Footer.module.css';
 
 // eslint-disable-next-line react/prop-types
-function Footer({ data, deleteTaskCompleted }) {
-	const clear = () => {
+function Footer({ data, deleteTasksCompleted }) {
+	//Удаление выполненных задач
+	const clearCompleted = () => {
 		const updatedTasks = data.filter(task => !task.completed);
-		deleteTaskCompleted(updatedTasks);
+		deleteTasksCompleted(updatedTasks);
 	};
 
+	//Проверка оставшихся не выполненных задач
 	const itemsLeft = data.filter(task => !task.completed).length;
 
 	return (
@@ -47,7 +49,11 @@ function Footer({ data, deleteTaskCompleted }) {
 			>
 				Completed
 			</NavLink>
-			<Button type='button' onClick={clear} className={styles['padding']}>
+			<Button
+				type='button'
+				onClick={clearCompleted}
+				className={styles['footer__button']}
+			>
 				Clear completed
 			</Button>
 		</footer>

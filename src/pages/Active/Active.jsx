@@ -3,8 +3,9 @@ import Item from '../../components/Item/Item';
 import styles from './Active.module.css';
 
 function Active() {
-	const [data, checked, deleteTask] = useOutletContext();
+	const [data, changeChecked, deleteTask] = useOutletContext();
 
+	//Фильтрация задач
 	function filter(task) {
 		return task.completed === false;
 	}
@@ -19,7 +20,7 @@ function Active() {
 						text={task.text}
 						id={task.id}
 						completed={task.completed}
-						checked={checked}
+						changeChecked={changeChecked}
 						deleteTask={deleteTask}
 					/>
 				))}
