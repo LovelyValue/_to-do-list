@@ -7,10 +7,10 @@
 :root {
 	background: #000;
 	padding: 35px;
-	--background-color: #4f0202;
+	--background-color: #525050;
 	--text-color: #000;
-	--hover-color: #e10000;
-	--active-color: #930000;
+	--hover-color: #673939;
+	--active-color: #835b5b;
 	--border-color: #000000;
 	--scroll-color: #000000;
 }
