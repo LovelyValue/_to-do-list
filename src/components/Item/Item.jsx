@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import DeleteIcon from '../../assets/delete-icon.svg?react';
 import styles from './Item.module.css';
 
 // eslint-disable-next-line react/prop-types
@@ -25,11 +26,7 @@ function Item({ text, id, completed, changeChecked, deleteTask }) {
 				{text}
 			</span>
 			<button className={styles['item__button']} onClick={() => deleteTask(id)}>
-				<img
-					className={styles['item__img']}
-					src='\public\delete-icon.svg'
-					alt='delete-icon'
-				/>
+				<DeleteIcon className={styles['item__img']} />
 			</button>
 		</label>
 	);
